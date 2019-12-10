@@ -1,3 +1,9 @@
+$primart-font : 20px;
+$primary-color: red;
+
+
+
 h1 {
-	font-size: 90px;
+	font-size: $primart-font;
+	color: $primary-color;
 }

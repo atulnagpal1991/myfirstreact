@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Car from './App.js';
-// import './main-scss';
+import Employee from './Employee.js';
+import './main.scss';
+import 'bootstrap/scss/bootstrap.scss';
 
-class Garage extends React.Component {
+class Company extends React.Component {
   render() {
     return (
-      <div>
-	      <h1>Who lives in my Garage {this.props.color}?</h1>
-	      <Car />
+      <div class="row">
+	      <h1>Company Employee's</h1>
+	      <Employee />
       </div>
     );
   }
 }
 
-ReactDOM.render(<Garage color="red"/>, document.getElementById('root'));
+ReactDOM.render(<Company/>, document.getElementById('root'));
