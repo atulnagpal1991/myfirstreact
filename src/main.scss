@@ -1,9 +1,95 @@
-$primart-font : 20px;
-$primary-color: red;
+*:focus {
+	outline: none!important;
+	box-shadow: none !important;
+}
 
+body {
+	font-size: 14px;
+}
 
+.company-employees {
+	width: calc(100% - 65px);
+	margin-left: 65px;
 
-h1 {
-	font-size: $primart-font;
-	color: $primary-color;
+	.employee-details {
+		padding: 10px;
+
+		span {
+			float: right;
+		}
+
+		div[class^="employee"]{
+			padding: 0 10px;
+		}
+
+	}
+
+	.selected-filters {
+		margin-top: 10px;
+}
+.search-name{
+
+		input, button,  {
+			max-width: 300px;
+			border-radius: 0;
+			float: left;
+		}
+
+		button {
+			max-width: 300px;
+			border-radius: 0;
+		}
+
+		select {
+			width: 300px;
+		}
+
+	}
+
+}
+
+.filters-open {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	font-size: 16px;
+}
+
+.filter-option {
+	clear: both;
+	padding: 10px;
+	display: none;
+
+	label {
+		display: block;
+		margin-bottom: 10px;
+		
+		span {
+			margin-left: 5px;
+		}
+	}
+}
+
+.sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 999;
+
+	.sidenav---sidenav---_2tBP {
+		width: 64px;
+		overflow: hidden;
+		transition: .5s
+	}
+
+	.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
+		min-width: 300px;
+		max-width: 80%;
+
+		.filter-option {
+			display: block;
+		}
+	}
+
 }
