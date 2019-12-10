@@ -14,12 +14,25 @@ body {
 	.employee-details {
 		padding: 10px;
 
-		span {
-			float: right;
-		}
-
 		div[class^="employee"]{
-			padding: 0 10px;
+			padding: 5px 10px;
+			border-bottom: 1px solid #dadada;	
+			
+			label {
+				margin: 0;
+			}
+			span {
+				float: right;
+			}
+
+			@media(max-width: 576px) {
+				label {
+					width: 100%;
+				}
+			span {
+				float: left;
+			}
+			}
 		}
 
 	}
