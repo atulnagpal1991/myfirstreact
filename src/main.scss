@@ -10,7 +10,7 @@ body { font-size: 14px; color: #666; background: #fefefe; }
 		.basic-info { position: absolute; bottom: 0; width: 100%; background-color: rgba(0, 0, 0, .7); padding: 5px 10px; color: #fff;
 			.employee-name { font-size: 18px; margin-right: 5px; }
 		}
-		div[class^="employee"] { padding: 10px; border-bottom: 1px solid #dadada; display: flex;
+		div[class^="employee"] { padding: 10px; border-bottom: 1px solid #dadada; display: flex; align-items: center;
 			label { margin: 0; font-weight: 500; color: #333; max-width: 80px; }
 			span:last-child { margin-left: auto; text-align: right; }
 		}
@@ -25,7 +25,7 @@ body { font-size: 14px; color: #666; background: #fefefe; }
 .search-name { input { max-width: 230px; border-radius: 0.25rem 0 0 0.25rem; float: left; }
 	button { border-radius: 0 0.25rem 0.25rem 0; }
 	select { width: 200px; }
-	@media(max-width:576px) {
+	@media(max-width:575px) {
 		.col-auto { width: 100%; margin-top: 10px; }
 		input { max-width: 100%; border-radius: 0.25rem .25rem 0 0; }
 		button { border-radius: 0 0 0.25rem 0.25rem; width: 100%; }

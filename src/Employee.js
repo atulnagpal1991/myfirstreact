@@ -8,7 +8,7 @@ class Employee extends React.Component {
 				{
 				    this.props.employees && this.props.employees.length > 0 && this.props.employees.map((employee, index) => {
 				        return (
-									<div className="employee-details col-sm-6 col-lg-4 col-xl-3">
+									<div className="employee-details col-sm-6 col-md-4 col-lg-3">
 										<div className="card">
 											<div className="position-relative">
 												<img className="card-img-top" alt={employee.name} src={employee.image}/>
