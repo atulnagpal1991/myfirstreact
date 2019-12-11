@@ -13,12 +13,14 @@ class Employee extends React.Component {
 											<div className="position-relative">
 												<img className="card-img-top" src={employee.image}/>
 												<div className="basic-info">
-													<div className="d-flex align-items-center">
+													<div className="">
 														<span className="employee-name">{employee.name}</span>
 														<span className="employee-gender">({employee.gender})</span>
 													</div>
-													<span className="employee-id">Id: {employee.id} - </span>
-													<span className="employee-created">{employee.created}</span>
+													<div>
+														<span className="employee-id">Id: {employee.id} - </span>
+														<span className="employee-created">{employee.created}</span>
+													</div>
 												</div>
 											</div>
 											<div className="employee-status"><label>Species:</label><span>{employee.status}</span></div>

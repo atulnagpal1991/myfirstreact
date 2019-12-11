@@ -20,7 +20,7 @@ body {
 			bottom: 0;
 			width: 100%;
 			background-color: rgba(0, 0, 0, .7);
-			padding: 10px;
+			padding: 5px 10px;
 			color: #fff;
 
 			.employee-name {
@@ -33,6 +33,7 @@ body {
 		div[class^="employee"] {
 			padding: 5px 10px;
 			border-bottom: 1px solid #dadada;
+			display: flex;
 
 			label {
 				margin: 0;
@@ -42,19 +43,8 @@ body {
 			}
 
 			span:last-child {
-				float: right;
-			}
-
-			@media(max-width:576px) {
-				label {
-					width: 100%;
-				}
-
-				span:last-child {
-					float: left;
-					max-width: 100%;
-				}
-
+				margin-left: auto;
+				text-align: right;
 			}
 
 		}
