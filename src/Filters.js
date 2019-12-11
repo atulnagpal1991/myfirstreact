@@ -36,15 +36,17 @@ class Filters extends Component {
 		</div>
 		<div className="selected-filters">
 			<h5>Selected Filters</h5>
-			<div className="d-flex">
-				<div class="alert alert-success alert-dismissible mr-3">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong>Success!</strong>
-				</div>
-				<div class="alert alert-success alert-dismissible mr-3">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong>Success!</strong>
-				</div>
+			<div className="col">
+        <div className="row">
+  				<div class="alert alert-success alert-dismissible mr-3">
+  					<button type="button" class="close" data-dismiss="alert">&times;</button>
+  					<strong>Success!</strong>
+  				</div>
+  				<div class="alert alert-success alert-dismissible mr-3">
+  					<button type="button" class="close" data-dismiss="alert">&times;</button>
+  					<strong>Success!</strong>
+  				</div>
+        </div>
 			</div>
 		</div>
 		<div className="search-name">
