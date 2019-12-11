@@ -23,6 +23,7 @@ class Company extends Component {
       sort: customData.sort,
       sortOrder: "",
       textToSearch: "",
+      selectedSpices : []
       // originalEmployessArray
     };
 
@@ -55,8 +56,22 @@ class Company extends Component {
     })
   }
 
+  _handleFilterChange(stateVariable, valueToBe, e) {
+    let dataToUpdate = this.state[stateVariable];
+    let value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+
+    if(value) dataToUpdate.push(valueToBe)
+    else dataToUpdate.splice(dataToUpdate.indexOf(valueToBe), 1)
+
+    this.setState({
+      [stateVariable]: dataToUpdate
+    }, () => {
+      this._handleFilterData();
+    });
+  }
+
   _handleFilterData() {
-    let { textToSearch , employees, sortOrder} = this.state;
+    let { textToSearch , employees, sortOrder, selectedSpices} = this.state;
 
       let regex = new RegExp(textToSearch, 'i')
       employees = employees.map((ele) => {
@@ -65,12 +80,17 @@ class Company extends Component {
         // Search filter
         if(textToSearch) ele.isHide = regex.test(ele.name) ? false : true
         
+        // Spices Filter
+        if(selectedSpices.length > 0 && !ele.isHide) {
+          ele.isHide = selectedSpices.indexOf(ele.species) !== -1 ? false : true
+        }
+        
         return ele
       });
 
       //Sort
       employees.sort((a, b) => { 
-        return sortOrder === "ascending" ? a.id - b.id :  b.id - a.id
+        return sortOrder ===  "descending" ?  b.id - a.id : a.id - b.id 
       });
 
       this.setState({
@@ -79,7 +99,7 @@ class Company extends Component {
   }
 
   render() {
-    let { species, gender, origin, sort } = this.state
+    let { species, gender, origin, sort, selectedSpices } = this.state
     return (
       <div className="container-fluid company-employees">
         <div className="sidebar">
@@ -99,7 +119,13 @@ class Company extends Component {
                     species && species.length > 0 && species.map((specie, index) => {
                       return (
                         <React.Fragment key={`species-key-${index}`}>
-                          <input id={`species-${index}`} type="checkbox" value={specie.value} />
+                          <input 
+                            id={`species-${index}`} 
+                            type="checkbox" 
+                            value={specie.value} 
+                            checked={selectedSpices.indexOf(specie.value) !== -1 ? true: false}
+                            onChange={this._handleFilterChange.bind(this , 'selectedSpices', specie.value)}
+                          />
                           <label htmlFor={`species-${index}`}>{specie.display}</label>
                         </React.Fragment>
                       )

@@ -2,7 +2,6 @@ import React from 'react';
 
 class Employee extends React.Component {
 	render() {
-		console.log("eee", this.props.employees);
 		return (
 			<>
 				{
@@ -29,7 +28,7 @@ class Employee extends React.Component {
 									<div className="employee-location"><label>Last Location:</label><span>{employee.location && employee.location.name}</span></div>
 								</div>
 							</div>
-							: null
+								: null
 						)
 					})
 				}
