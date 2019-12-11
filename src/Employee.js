@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 class Employee extends React.Component {
 	render() {
@@ -18,7 +19,7 @@ class Employee extends React.Component {
 											</div>
 											<div>
 												<span className="employee-id">Id: {employee.id} - </span>
-												<span className="employee-created">{employee.created}</span>
+												<span className="employee-created">{moment(employee.created).fromNow()}</span>
 											</div>
 										</div>
 									</div>
