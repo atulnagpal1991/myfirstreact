@@ -23,7 +23,9 @@ class Company extends Component {
       sort: customData.sort,
       sortOrder: "",
       textToSearch: "",
-      selectedSpices : []
+      selectedSpices : [],
+      selectedGender: [],
+      selectedOrigin: []
       // originalEmployessArray
     };
 
@@ -70,8 +72,19 @@ class Company extends Component {
     });
   }
 
+  _handleRemoveFilter(stateVariable, valueToBe) {
+    console.log('')
+    let dataToUpdate = this.state[stateVariable];
+    dataToUpdate.splice(dataToUpdate.indexOf(valueToBe), 1);
+    this.setState({
+      [stateVariable]: dataToUpdate
+    }, () => {
+      this._handleFilterData();
+    });
+  }
+
   _handleFilterData() {
-    let { textToSearch , employees, sortOrder, selectedSpices} = this.state;
+    let { textToSearch , employees, sortOrder, selectedSpices, selectedGender, selectedOrigin} = this.state;
 
       let regex = new RegExp(textToSearch, 'i')
       employees = employees.map((ele) => {
@@ -83,6 +96,17 @@ class Company extends Component {
         // Spices Filter
         if(selectedSpices.length > 0 && !ele.isHide) {
           ele.isHide = selectedSpices.indexOf(ele.species) !== -1 ? false : true
+        }
+
+        // Gender Filter
+        if(selectedGender.length > 0 && !ele.isHide) {
+          ele.isHide = selectedGender.indexOf(ele.gender) !== -1 ? false : true
+        }
+        
+        //Origin filter
+        
+        if(selectedOrigin.length > 0 && !ele.isHide) {
+          ele.isHide = selectedOrigin.indexOf(ele.origin && ele.origin.name) !== -1 ? false : true
         }
         
         return ele
@@ -99,7 +123,7 @@ class Company extends Component {
   }
 
   render() {
-    let { species, gender, origin, sort, selectedSpices } = this.state
+    let { species, gender, origin, sort, selectedSpices, selectedGender, selectedOrigin } = this.state
     return (
       <div className="container-fluid company-employees">
         <div className="sidebar">
@@ -140,7 +164,13 @@ class Company extends Component {
                     gender && gender.length > 0 && gender.map((ele, index) => {
                       return (
                         <React.Fragment key={`gender-key-${index}`}>
-                          <input id={`gender-${index}`} type="checkbox" value={ele.value} />
+                          <input 
+                            id={`gender-${index}`} 
+                            type="checkbox" 
+                            value={ele.value} 
+                            checked={selectedGender.indexOf(ele.value) !== -1 ? true: false}
+                            onChange={this._handleFilterChange.bind(this , 'selectedGender', ele.value)}
+                          />
                           <label htmlFor={`gender-${index}`}>{ele.display} </label>
                         </React.Fragment>
                       )
@@ -155,8 +185,14 @@ class Company extends Component {
                     origin && origin.length > 0 && origin.map((org, index) => {
                       return (
                         <React.Fragment key={`origin-key-${index}`}>
-                          <input id={`origin-${index}`} type="checkbox" value={org.value} />
-                          <label htmlFor={`origin-  ${index}`}>{org.display}</label>
+                          <input 
+                            id={`origin-${index}`} 
+                            type="checkbox" 
+                            value={org.value} 
+                            checked={selectedOrigin.indexOf(org.value) !== -1 ? true: false}
+                            onChange={this._handleFilterChange.bind(this , 'selectedOrigin', org.value)}
+                          />
+                          <label htmlFor={`origin-${index}`}>{org.display}</label>
                         </React.Fragment>
                       )
                     })
@@ -170,8 +206,33 @@ class Company extends Component {
           <h5>Selected Filters</h5>
           <div className="col">
             <div className="row">
-              <span className="badge badge-pill badge-success">Success Label <i className="close-filter"><img src="cancel.svg"/></i></span>
-              <span className="badge badge-pill badge-success">Success Label <i className="close-filter"><img src="cancel.svg"/></i></span>
+            {
+              selectedSpices && selectedSpices.length > 0 && selectedSpices.map((ele, index) => {
+                return <span className="badge badge-pill badge-success" key={`selcted-spices-${index}`}>
+                          {ele} 
+                          <i className="close-filter" onClick={this._handleRemoveFilter.bind(this, 'selectedSpices', ele)}><img src="cancel.svg" alt="Remove Icon"/></i>
+                        </span>
+              }) 
+            }
+
+            {
+              selectedOrigin && selectedOrigin.length > 0 && selectedOrigin.map((ele, index) => {
+                return <span className="badge badge-pill badge-success" key={`selcted-origin-${index}`}>
+                          {ele} 
+                          <i className="close-filter" onClick={this._handleRemoveFilter.bind(this, 'selectedOrigin', ele)}><img src="cancel.svg" alt="Remove Icon"/></i>
+                        </span>
+              }) 
+            }
+
+            {
+              selectedGender && selectedGender.length > 0 && selectedGender.map((ele, index) => {
+                return <span className="badge badge-pill badge-success" key={`selcted-gender-${index}`}>
+                          {ele} 
+                          <i className="close-filter" onClick={this._handleRemoveFilter.bind(this, 'selectedGender', ele)}><img src="cancel.svg" alt="Remove Icon"/></i>
+                        </span>
+              }) 
+            }
+
             </div>
           </div>
         </div>

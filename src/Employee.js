@@ -10,7 +10,7 @@ class Employee extends React.Component {
 							!employee.isHide ? <div className="employee-details col-sm-6 col-md-4 col-lg-3" key={`employee-list-${index}`}>
 								<div className="card">
 									<div className="position-relative">
-										<img className="card-img-top" alt={employee.name} src={employee.image} />
+										<img className="card-img-top" alt={employee.name} src={employee.image}/>
 										<div className="basic-info">
 											<div className="">
 												<span className="employee-name">{employee.name}</span>
