@@ -18,7 +18,9 @@ body { font-size: 14px; color: #666; background: #fefefe; }
 
 
 /*Filters Css Start*/
-.selected-filters { .badge + .badge { margin-left: 10px; }
+.selected-filters {
+	.badge + .badge { margin-left: 10px; }
+	.close-filter img {width: 10px; margin: 5px; cursor: pointer;}
 }
 .search-name { input { max-width: 230px; border-radius: 0.25rem 0 0 0.25rem; float: left; }
 	button { border-radius: 0 0.25rem 0.25rem 0; }

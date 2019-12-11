@@ -128,8 +128,8 @@ class Company extends Component {
           <h5>Selected Filters</h5>
           <div className="col">
             <div className="row">
-              <span className="badge badge-pill badge-success">Success Label</span>
-              <span className="badge badge-pill badge-success">Success Label</span>
+              <span className="badge badge-pill badge-success">Success Label <i className="close-filter"><img src="cancel.svg"/></i></span>
+              <span className="badge badge-pill badge-success">Success Label <i className="close-filter"><img src="cancel.svg"/></i></span>
             </div>
           </div>
         </div>
