@@ -23,7 +23,7 @@ class Employee extends React.Component {
 											</div>
 										</div>
 									</div>
-									<div className="employee-status"><label>Species:</label><span>{employee.status}</span></div>
+									<div className="employee-status"><label>Status:</label><span>{employee.status}</span></div>
 									<div className="employee-species"><label>Species:</label><span>{employee.species}</span></div>
 									<div className="employee-origin"><label>Origin:</label><span>{employee.origin && employee.origin.name}</span></div>
 									<div className="employee-location"><label>Last Location:</label><span>{employee.location && employee.location.name}</span></div>

@@ -2,7 +2,6 @@
 *:focus { outline: none !important; box-shadow: none !important; }
 body { font-size: 14px; color: #666; background: #fefefe; }
 
-/*Common Css End*/
 
 /*Employees Css Start*/
 .company-employees { width: calc(100% - 65px); margin-left: 65px;
@@ -17,7 +16,6 @@ body { font-size: 14px; color: #666; background: #fefefe; }
 	}
 }
 
-/*Employees Css End*/
 
 /*Filters Css Start*/
 .selected-filters { .badge + .badge { margin-left: 10px; }
@@ -40,7 +38,6 @@ body { font-size: 14px; color: #666; background: #fefefe; }
 	div[class^="filter"] { padding: 10px 0; border-top: 1px solid #ccc; }
 }
 
-/*Filters Css End*/
 
 /*Sidebar Css Start*/
 .sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 999;
@@ -50,7 +47,6 @@ body { font-size: 14px; color: #666; background: #fefefe; }
 	}
 }
 
-/*Sidebar Css End */
 
 /*Custom Checkbox & Radio Css Start */
 .styled-checkbox { input { position: absolute; opacity: 0;
@@ -58,10 +54,10 @@ body { font-size: 14px; color: #666; background: #fefefe; }
 		& + label:before { content: ''; margin-right: 10px; display: inline-block; vertical-align: text-top; width: 20px; height: 20px; background-color: #fff; border: 1px solid #000; }
 		&:focus + label:before { box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }
 		&:checked + label:before { background: #f35429; }
-		&:checked + label:after { content: ''; position: absolute; left: 5px; top: 9px; background: white; width: 2px; height: 2px; box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white; transform: rotate(45deg); }
+		&:checked + label:after { content: ''; position: absolute; left: 5px; top: 10px; background: white; width: 2px; height: 2px; box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white; transform: rotate(45deg); }
 		&:disabled + label { color: #b8b8b8; cursor: auto; }
 		&:disabled + label:before { background: #ddd; }
 	}
 }
 
-/*Custom Checkbox & Radio Css End */
+
