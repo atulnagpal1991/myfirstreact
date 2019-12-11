@@ -1,108 +1,31 @@
-*:focus {
-	outline: none!important;
-	box-shadow: none !important;
-}
-
-body {
-	font-size: 14px;
-}
-
-.company-employees {
-	width: calc(100% - 65px);
-	margin-left: 65px;
-
-	.employee-details {
-		padding: 10px;
-
-		div[class^="employee"]{
-			padding: 5px 10px;
-			border-bottom: 1px solid #dadada;	
-			
-			label {
-				margin: 0;
-			}
-			span {
-				float: right;
-			}
-
-			@media(max-width: 576px) {
-				label {
-					width: 100%;
-				}
-			span {
-				float: left;
-			}
+*:focus { outline: none !important; box-shadow: none !important; }
+body { font-size: 14px; }
+.company-employees { width: calc(100% - 65px); margin-left: 65px;
+	.employee-details { padding: 10px;
+		div[class^="employee"] { padding: 5px 10px; border-bottom: 1px solid #dadada;
+			label { margin: 0; }
+			span { float: right; }
+			@media(max-width:576px) {
+				label { width: 100%; }
+				span { float: left; }
 			}
 		}
-
 	}
-
-	.selected-filters {
-		margin-top: 10px;
-}
-.search-name{
-
-		input, button,  {
-			max-width: 300px;
-			border-radius: 0;
-			float: left;
-		}
-
-		button {
-			max-width: 300px;
-			border-radius: 0;
-		}
-
-		select {
-			width: 300px;
-		}
-
-	}
-
-}
-
-.filters-open {
-	position: absolute;
-	top: 0;
-	left: 10px;
-	font-size: 16px;
-}
-
-.filter-option {
-	clear: both;
-	padding: 10px;
-	display: none;
-
-	label {
-		display: block;
-		margin-bottom: 10px;
-		
-		span {
-			margin-left: 5px;
-		}
+	.selected-filters { margin-top: 10px; }
+	.search-name { input, button { max-width: 300px; border-radius: 0; float: left; }
+		button { max-width: 300px; border-radius: 0; }
+		select { width: 300px; }
 	}
 }
-
-.sidebar {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 999;
-
-	.sidenav---sidenav---_2tBP {
-		width: 64px;
-		overflow: hidden;
-		transition: .5s
+.filters-open { position: absolute; top: 20px; left: 70px; font-size: 24px; }
+.filter-option { clear: both; padding:0 10px; display: none;
+	label { display: block; margin-bottom: 10px;
+		span { margin-left: 5px; }
 	}
-
-	.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
-		min-width: 300px;
-		max-width: 80%;
-
-		.filter-option {
-			display: block;
-		}
+}
+.sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 999;
+	.sidenav---sidenav---_2tBP { width: 64px; overflow: hidden; transition: .5s }
+	.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL { min-width: 300px; max-width: 80%;
+		.filter-option { display: block; }
 	}
-
 }

@@ -21,7 +21,8 @@ class Filters extends Component {
 				<SideNav.Toggle>
 				<span className="filters-open">Filters</span>
 				</SideNav.Toggle>
-        <div className="filter-option" >
+        <div className="filter-option">
+          <hr/>
 					<h6>Species</h6>
           <label><input type="checkbox" value="Human"/><span>Human</span></label>
           <label><input type="checkbox" value="Alien"/><span>Alien</span></label>
