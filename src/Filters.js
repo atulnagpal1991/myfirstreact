@@ -26,33 +26,33 @@ class Filters extends Component {
 					  <h6>Species</h6>
             <div className="styled-checkbox">
               <input  id="species-1" type="checkbox" value="Human"/>
-              <label for="species-1">Human</label>
+              <label htmlFor="species-1">Human</label>
               <input  id="species-2" type="checkbox" value="Alien"/>
-              <label for="species-2">Alien</label>
+              <label htmlFor="species-2">Alien</label>
               <input  id="species-3" type="checkbox" value="Other"/>
-              <label for="species-3">Other</label>
+              <label htmlFor="species-3">Other</label>
             </div>
           </div>
           <div className="filter-gender">
 					 <h6>Gender</h6>
             <div className="styled-checkbox">
               <input  id="gender-1" type="checkbox" value="Male"/>
-              <label for="gender-1">Male</label>
+              <label htmlFor="gender-1">Male</label>
               <input  id="gender-2" type="checkbox" value="Female"/>
-              <label for="gender-2">Female</label>
+              <label htmlFor="gender-2">Female</label>
             </div>
           </div>
           <div className="filter-origin">
            <h6>Origin</h6>
             <div className="styled-checkbox">
               <input  id="origin-1" type="checkbox" value="Earth (C-137)"/>
-              <label for="origin-1">Earth (C-137)</label>
+              <label htmlFor="origin-1">Earth (C-137)</label>
               <input  id="origin-2" type="checkbox" value="Earth (Replacement Dimension)"/>
-              <label for="origin-2">Earth (Replacement Dimension)</label>
+              <label htmlFor="origin-2">Earth (Replacement Dimension)</label>
               <input  id="origin-3" type="checkbox" value="Abadango"/>
-              <label for="origin-3">Abadango</label>
+              <label htmlFor="origin-3">Abadango</label>
               <input  id="origin-4" type="checkbox" value="unknown"/>
-              <label for="origin-4">unknown</label>
+              <label htmlFor="origin-4">unknown</label>
             </div>
           </div>
         </div>
@@ -62,12 +62,12 @@ class Filters extends Component {
 			<h5>Selected Filters</h5>
 			<div className="col">
         <div className="row">
-  				<div class="alert alert-success alert-dismissible mr-1">
-  					<button type="button" class="close" data-dismiss="alert">&times;</button>
+  				<div className="alert alert-success alert-dismissible mr-1">
+  					<button type="button" className="close" data-dismiss="alert">&times;</button>
   					<strong>Success!</strong>
   				</div>
-  				<div class="alert alert-success alert-dismissible mr-1">
-  					<button type="button" class="close" data-dismiss="alert">&times;</button>
+  				<div className="alert alert-success alert-dismissible mr-1">
+  					<button type="button" className="close" data-dismiss="alert">&times;</button>
   					<strong>Success!</strong>
   				</div>
         </div>
