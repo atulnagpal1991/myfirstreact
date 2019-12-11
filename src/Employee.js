@@ -8,7 +8,7 @@ class Employee extends React.Component {
 				{
 					this.props.employees && this.props.employees.length > 0 && this.props.employees.map((employee, index) => {
 						return (
-							<div className="employee-details col-sm-6 col-md-4 col-lg-3" key={`employee-list-${index}`}>
+							!employee.isHide ? <div className="employee-details col-sm-6 col-md-4 col-lg-3" key={`employee-list-${index}`}>
 								<div className="card">
 									<div className="position-relative">
 										<img className="card-img-top" alt={employee.name} src={employee.image} />
@@ -29,6 +29,7 @@ class Employee extends React.Component {
 									<div className="employee-location"><label>Last Location:</label><span>{employee.location && employee.location.name}</span></div>
 								</div>
 							</div>
+							: null
 						)
 					})
 				}

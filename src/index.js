@@ -21,10 +21,13 @@ class Company extends Component {
       gender: customData.gender,
       origin: customData.origin,
       sort: customData.sort,
-      sortOrder: ""
+      sortOrder: "",
+      textToSearch: "",
+      // originalEmployessArray
     };
 
     this._handleInputChange = this._handleInputChange.bind(this)
+    this._handleFilterData = this._handleFilterData.bind(this)
   }
 
   componentDidMount() {
@@ -45,21 +48,34 @@ class Company extends Component {
     let name = e.target.name,
       value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
 
-    let stateToUpdate = {
+    this.setState({
       [name]: value
-    },
-      { employees } = this.state;
+    }, ()=> {
+      this._handleFilterData();
+    })
+  }
 
-    if(name === "sortOrder") {
-        // if(value === "ascending") employees
-        employees.sort((a, b) => { 
-          return value === "ascending" ? a.id - b.id :  b.id - a.id
-        });
-    }
+  _handleFilterData() {
+    let { textToSearch , employees, sortOrder} = this.state;
 
-    stateToUpdate.employees = employees
+      let regex = new RegExp(textToSearch, 'i')
+      employees = employees.map((ele) => {
+        ele.isHide = false;
 
-    this.setState(stateToUpdate)
+        // Search filter
+        if(textToSearch) ele.isHide = regex.test(ele.name) ? false : true
+        
+        return ele
+      });
+
+      //Sort
+      employees.sort((a, b) => { 
+        return sortOrder === "ascending" ? a.id - b.id :  b.id - a.id
+      });
+
+      this.setState({
+        employees
+      });
   }
 
   render() {
@@ -137,7 +153,14 @@ class Company extends Component {
           <h6>Search By Name</h6>
           <div className="row">
             <div className="col">
-              <input className="form-control" placeholder="Name" type="text" />
+              <input 
+                className="form-control" 
+                placeholder="Name" 
+                type="text" 
+                name="textToSearch"
+                value={this.state.textToSearch}
+                onChange={this._handleInputChange}
+              />
               <button className="btn btn-primary">Search</button>
             </div>
             <div className="col-auto ml-auto">
