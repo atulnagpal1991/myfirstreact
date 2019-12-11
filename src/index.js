@@ -9,12 +9,22 @@ import './main.scss';
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
+import { customData } from './customData';
 
 
 class Company extends Component {
   constructor() {
     super();
-    this.state = { employees: [] };
+    this.state = {
+      employees: [],
+      species: customData.species,
+      gender: customData.gender,
+      origin: customData.origin,
+      sort: customData.sort,
+      sortOrder: ""
+    };
+
+    this._handleInputChange = this._handleInputChange.bind(this)
   }
 
   componentDidMount() {
@@ -31,7 +41,29 @@ class Company extends Component {
       })
   }
 
+  _handleInputChange(e) {
+    let name = e.target.name,
+      value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+
+    let stateToUpdate = {
+      [name]: value
+    },
+      { employees } = this.state;
+
+    if(name === "sortOrder") {
+        // if(value === "ascending") employees
+        employees.sort((a, b) => { 
+          return value === "ascending" ? a.id - b.id :  b.id - a.id
+        });
+    }
+
+    stateToUpdate.employees = employees
+
+    this.setState(stateToUpdate)
+  }
+
   render() {
+    let { species, gender, origin, sort } = this.state
     return (
       <div className="container-fluid company-employees">
         <div className="sidebar">
@@ -47,34 +79,46 @@ class Company extends Component {
               <div className="filter-species">
                 <h6>Species</h6>
                 <div className="styled-checkbox">
-                  <input id="species-1" type="checkbox" value="Human" />
-                  <label htmlFor="species-1">Human</label>
-                  <input id="species-2" type="checkbox" value="Alien" />
-                  <label htmlFor="species-2">Alien</label>
-                  <input id="species-3" type="checkbox" value="Other" />
-                  <label htmlFor="species-3">Other</label>
+                  {
+                    species && species.length > 0 && species.map((specie, index) => {
+                      return (
+                        <React.Fragment key={`species-key-${index}`}>
+                          <input id={`species-${index}`} type="checkbox" value={specie.value} />
+                          <label htmlFor={`species-${index}`}>{specie.display}</label>
+                        </React.Fragment>
+                      )
+                    })
+                  }
                 </div>
               </div>
               <div className="filter-gender">
                 <h6>Gender</h6>
                 <div className="styled-checkbox">
-                  <input id="gender-1" type="checkbox" value="Male" />
-                  <label htmlFor="gender-1">Male</label>
-                  <input id="gender-2" type="checkbox" value="Female" />
-                  <label htmlFor="gender-2">Female</label>
+                  {
+                    gender && gender.length > 0 && gender.map((ele, index) => {
+                      return (
+                        <React.Fragment key={`gender-key-${index}`}>
+                          <input id={`gender-${index}`} type="checkbox" value={ele.value} />
+                          <label htmlFor={`gender-${index}`}>{ele.display} </label>
+                        </React.Fragment>
+                      )
+                    })
+                  }
                 </div>
               </div>
               <div className="filter-origin">
                 <h6>Origin</h6>
                 <div className="styled-checkbox">
-                  <input id="origin-1" type="checkbox" value="Earth (C-137)" />
-                  <label htmlFor="origin-1">Earth (C-137)</label>
-                  <input id="origin-2" type="checkbox" value="Earth (Replacement Dimension)" />
-                  <label htmlFor="origin-2">Earth (Replacement Dimension)</label>
-                  <input id="origin-3" type="checkbox" value="Abadango" />
-                  <label htmlFor="origin-3">Abadango</label>
-                  <input id="origin-4" type="checkbox" value="unknown" />
-                  <label htmlFor="origin-4">unknown</label>
+                  {
+                    origin && origin.length > 0 && origin.map((org, index) => {
+                      return (
+                        <React.Fragment key={`origin-key-${index}`}>
+                          <input id={`origin-${index}`} type="checkbox" value={org.value} />
+                          <label htmlFor={`origin-  ${index}`}>{org.display}</label>
+                        </React.Fragment>
+                      )
+                    })
+                  }
                 </div>
               </div>
             </div>
@@ -97,10 +141,18 @@ class Company extends Component {
               <button className="btn btn-primary">Search</button>
             </div>
             <div className="col-auto ml-auto">
-              <select className="form-control">
-                <option selected disabled>Sort By Id</option>
-                <option>Ascending</option>
-                <option>Descending</option>
+              <select
+                className="form-control"
+                value={this.state.sortOrder}
+                onChange={this._handleInputChange}
+                name="sortOrder"
+              >
+                <option disabled >Sort By Id</option>
+                {
+                  sort && sort.length > 0 && sort.map((ele, index) => {
+                    return <option value={ele.value} key={`sort-${index}`}>{ele.display}</option>
+                  })
+                }
               </select>
             </div>
           </div>
