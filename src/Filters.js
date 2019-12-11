@@ -75,7 +75,7 @@ class Filters extends Component {
 				</div>
 				<div className="col-auto ml-auto">
 					<select className="form-control">
-						<option value="DEFAULT" disabled>Sort By Id</option>
+						<option selected disabled>Sort By Id</option>
 						<option>Ascending</option>
 						<option>Descending</option>
 					</select>

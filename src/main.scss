@@ -33,7 +33,7 @@ body { font-size: 14px; color: #666; background: #fefefe; }
 	}
 }
 .filters-open { position: absolute; top: 20px; left: 70px; font-size: 24px; color: #fff; }
-.filter-options { clear: both; padding: 0 10px; width: 0; transition: .5s; opacity: 0;
+.filter-options { clear: both; padding: 0 10px; display: none;
 	label { display: block; margin-bottom: 0px;
 		span { margin-left: 5px; }
 	}
@@ -46,7 +46,7 @@ body { font-size: 14px; color: #666; background: #fefefe; }
 .sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 999;
 	.sidenav---sidenav---_2tBP { width: 64px; overflow: hidden; transition: .5s; background-color: rgba(0, 0, 0, 0.9); color: #fff; }
 	.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL { min-width: 300px; max-width: 80%;
-		.filter-options { width: 300px; opacity: 1 }
+		.filter-options { display: block; }
 	}
 }
 
