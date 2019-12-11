@@ -38,11 +38,11 @@ class Filters extends Component {
 			<h5>Selected Filters</h5>
 			<div className="col">
         <div className="row">
-  				<div class="alert alert-success alert-dismissible mr-3">
+  				<div class="alert alert-success alert-dismissible mr-1">
   					<button type="button" class="close" data-dismiss="alert">&times;</button>
   					<strong>Success!</strong>
   				</div>
-  				<div class="alert alert-success alert-dismissible mr-3">
+  				<div class="alert alert-success alert-dismissible mr-1">
   					<button type="button" class="close" data-dismiss="alert">&times;</button>
   					<strong>Success!</strong>
   				</div>
