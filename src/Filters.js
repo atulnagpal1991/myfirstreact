@@ -57,18 +57,12 @@ class Filters extends Component {
         </div>
 			</SideNav>
 		</div>
-		<div className="selected-filters pt-3">
+		<div className="selected-filters py-3">
 			<h5>Selected Filters</h5>
 			<div className="col">
         <div className="row">
-  				<div className="alert alert-success alert-dismissible mr-1">
-  					<button type="button" className="close" data-dismiss="alert">&times;</button>
-  					<strong>Success!</strong>
-  				</div>
-  				<div className="alert alert-success alert-dismissible mr-1">
-  					<button type="button" className="close" data-dismiss="alert">&times;</button>
-  					<strong>Success!</strong>
-  				</div>
+  				<span className="badge badge-pill badge-success">Success Label</span>
+          <span className="badge badge-pill badge-success">Success Label</span>
         </div>
 			</div>
 		</div>

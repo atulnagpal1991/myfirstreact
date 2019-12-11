@@ -1,6 +1,6 @@
 /*Common Css Start*/
 *:focus { outline: none !important; box-shadow: none !important; }
-body { font-size: 14px; color: #666; }
+body { font-size: 14px; color: #666; background: #fefefe; }
 
 /*Common Css End*/
 
@@ -10,19 +10,9 @@ body { font-size: 14px; color: #666; }
 		.basic-info { position: absolute; bottom: 0; width: 100%; background-color: rgba(0, 0, 0, .7); padding: 5px 10px; color: #fff;
 			.employee-name { font-size: 18px; margin-right: 5px; }
 		}
-		div[class^="employee"] { padding: 5px 10px; border-bottom: 1px solid #dadada; display: flex;
+		div[class^="employee"] { padding: 10px; border-bottom: 1px solid #dadada; display: flex;
 			label { margin: 0; font-weight: 500; color: #333; max-width: 80px; }
 			span:last-child { margin-left: auto; text-align: right; }
-		}
-	}
-	.search-name { input { max-width: 230px; border-radius: 0.25rem 0 0 0.25rem; float: left; }
-		button { border-radius: 0 0.25rem 0.25rem 0; }
-		select { width: 200px; }
-		@media(max-width:576px) {
-			.col-auto { width: 100%; margin-top: 10px; }
-			input { max-width: 100%; border-radius: 0.25rem .25rem 0 0; }
-			button { border-radius: 0 0 0.25rem 0.25rem; width: 100%; }
-			select { width: 100%; }
 		}
 	}
 }
@@ -30,6 +20,18 @@ body { font-size: 14px; color: #666; }
 /*Employees Css End*/
 
 /*Filters Css Start*/
+.selected-filters { .badge + .badge { margin-left: 10px; }
+}
+.search-name { input { max-width: 230px; border-radius: 0.25rem 0 0 0.25rem; float: left; }
+	button { border-radius: 0 0.25rem 0.25rem 0; }
+	select { width: 200px; }
+	@media(max-width:576px) {
+		.col-auto { width: 100%; margin-top: 10px; }
+		input { max-width: 100%; border-radius: 0.25rem .25rem 0 0; }
+		button { border-radius: 0 0 0.25rem 0.25rem; width: 100%; }
+		select { width: 100%; }
+	}
+}
 .filters-open { position: absolute; top: 20px; left: 70px; font-size: 24px; color: #fff; }
 .filter-options { clear: both; padding: 0 10px; width: 0; transition: .5s; opacity: 0;
 	label { display: block; margin-bottom: 0px;
