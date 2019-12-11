@@ -11,7 +11,7 @@ class Employee extends React.Component {
 									<div className="employee-details col-sm-6 col-lg-4 col-xl-3">
 										<div className="card">
 											<div className="position-relative">
-												<img className="card-img-top" src={employee.image}/>
+												<img className="card-img-top" alt={employee.name} src={employee.image}/>
 												<div className="basic-info">
 													<div className="">
 														<span className="employee-name">{employee.name}</span>

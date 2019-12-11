@@ -1,159 +1,57 @@
-*:focus {
-	outline: none !important;
-	box-shadow: none !important;
-}
+/*Common Css Start*/
+*:focus { outline: none !important; box-shadow: none !important; }
+body { font-size: 14px; color: #666; }
 
-body {
-	font-size: 14px;
-	color: #666;
-}
+/*Common Css End*/
 
-.company-employees {
-	width: calc(100% - 65px);
-	margin-left: 65px;
-
-	.employee-details {
-		margin: 10px 0;
-
-		.basic-info {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			background-color: rgba(0, 0, 0, .7);
-			padding: 5px 10px;
-			color: #fff;
-
-			.employee-name {
-				font-size: 18px;
-				margin-right: 5px;
-			}
-
+/*Employees Css Start*/
+.company-employees { width: calc(100% - 65px); margin-left: 65px;
+	.employee-details { margin: 10px 0;
+		.basic-info { position: absolute; bottom: 0; width: 100%; background-color: rgba(0, 0, 0, .7); padding: 5px 10px; color: #fff;
+			.employee-name { font-size: 18px; margin-right: 5px; }
 		}
-
-		div[class^="employee"] {
-			padding: 5px 10px;
-			border-bottom: 1px solid #dadada;
-			display: flex;
-
-			label {
-				margin: 0;
-				font-weight: 500;
-    		color: #333;
-    		max-width: 80px;
-			}
-
-			span:last-child {
-				margin-left: auto;
-				text-align: right;
-			}
-
-		}
-
-	}
-
-	.search-name {
-		input {
-			max-width: 230px;
-			border-radius: 0.25rem 0 0 0.25rem;
-			float: left;
-		}
-
-		button {
-			border-radius: 0 0.25rem 0.25rem 0;
-		}
-
-		select {
-			width: 200px;
-		}
-
-		@media(max-width: 576px){
-			.col-auto {
-				width: 100%;
-				margin-top: 10px;
-			}
-
-			input {
-				max-width: 100%;
-				border-radius: 0.25rem .25rem 0 0;
-			}
-
-			button {
-				border-radius: 0 0 0.25rem 0.25rem;
-				width: 100%;
-			}
-
-			select {
-				width: 100%;
-			}
-
+		div[class^="employee"] { padding: 5px 10px; border-bottom: 1px solid #dadada; display: flex;
+			label { margin: 0; font-weight: 500; color: #333; max-width: 80px; }
+			span:last-child { margin-left: auto; text-align: right; }
 		}
 	}
-
-}
-
-.filters-open {
-	position: absolute;
-	top: 20px;
-	left: 70px;
-	font-size: 24px;
-	color: #fff;
-}
-
-.filter-options {
-	clear: both;
-	padding: 0 10px;
-	display: none;
-
-	label {
-		display: block;
-		margin-bottom: 0px;
-
-		span {
-			margin-left: 5px;
+	.search-name { input { max-width: 230px; border-radius: 0.25rem 0 0 0.25rem; float: left; }
+		button { border-radius: 0 0.25rem 0.25rem 0; }
+		select { width: 200px; }
+		@media(max-width:576px) {
+			.col-auto { width: 100%; margin-top: 10px; }
+			input { max-width: 100%; border-radius: 0.25rem .25rem 0 0; }
+			button { border-radius: 0 0 0.25rem 0.25rem; width: 100%; }
+			select { width: 100%; }
 		}
-
 	}
-
-	div[class^="filter"] {
-		padding: 10px 0;
-		border-top: 1px solid #ccc;
-	}
-
 }
 
-.sidebar {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 999;
+/*Employees Css End*/
 
-	.sidenav---sidenav---_2tBP {
-		width: 64px;
-		overflow: hidden;
-		transition: .5s;
-		background-color: rgba(0, 0, 0, 0.9);
-		color: #fff;
+/*Filters Css Start*/
+.filters-open { position: absolute; top: 20px; left: 70px; font-size: 24px; color: #fff; }
+.filter-options { clear: both; padding: 0 10px; width: 0; transition: .5s; opacity: 0;
+	label { display: block; margin-bottom: 0px;
+		span { margin-left: 5px; }
 	}
-
-	.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
-		min-width: 300px;
-		max-width: 80%;
-
-		.filter-options {
-			display: block;
-		}
-
-	}
-
+	div[class^="filter"] { padding: 10px 0; border-top: 1px solid #ccc; }
 }
 
+/*Filters Css End*/
 
+/*Sidebar Css Start*/
+.sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 999;
+	.sidenav---sidenav---_2tBP { width: 64px; overflow: hidden; transition: .5s; background-color: rgba(0, 0, 0, 0.9); color: #fff; }
+	.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL { min-width: 300px; max-width: 80%;
+		.filter-options { width: 300px; opacity: 1 }
+	}
+}
 
+/*Sidebar Css End */
 
-/*************Custom Checkbox & Radio Start ******************/
-.styled-checkbox { 
-	input { position: absolute; opacity: 0;
+/*Custom Checkbox & Radio Css Start */
+.styled-checkbox { input { position: absolute; opacity: 0;
 		& + label { position: relative; cursor: pointer; padding: 0; margin-bottom: 10px; }
 		& + label:before { content: ''; margin-right: 10px; display: inline-block; vertical-align: text-top; width: 20px; height: 20px; background-color: #fff; border: 1px solid #000; }
 		&:focus + label:before { box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }
@@ -164,4 +62,4 @@ body {
 	}
 }
 
-/*************Custom Checkbox & Radio End ******************/
+/*Custom Checkbox & Radio Css End */

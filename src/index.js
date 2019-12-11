@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Employee from './Employee.js';
 import Filters from './Filters.js';
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import 'bootstrap/scss/bootstrap.scss';
 import './main.scss';
 
