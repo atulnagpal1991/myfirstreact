@@ -42,6 +42,19 @@ class Filters extends Component {
               <label for="gender-2">Female</label>
             </div>
           </div>
+          <div className="filter-origin">
+           <h6>Origin</h6>
+            <div className="styled-checkbox">
+              <input  id="origin-1" type="checkbox" value="Earth (C-137)"/>
+              <label for="origin-1">Earth (C-137)</label>
+              <input  id="origin-2" type="checkbox" value="Earth (Replacement Dimension)"/>
+              <label for="origin-2">Earth (Replacement Dimension)</label>
+              <input  id="origin-3" type="checkbox" value="Abadango"/>
+              <label for="origin-3">Abadango</label>
+              <input  id="origin-4" type="checkbox" value="unknown"/>
+              <label for="origin-4">unknown</label>
+            </div>
+          </div>
         </div>
 			</SideNav>
 		</div>
